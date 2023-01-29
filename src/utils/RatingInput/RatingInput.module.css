@@ -1,0 +1,19 @@
+.rating {
+  display: flex;
+  gap: 1rem;
+}
+
+.rating button {
+  border-radius: 0;
+  background-color: transparent;
+  background-image: url('https://img.icons8.com/fluency/512/star.png');
+  background-size: 100%;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  filter: grayscale(1);
+}
+
+.rating button.checked {
+  filter: grayscale(0);
+}

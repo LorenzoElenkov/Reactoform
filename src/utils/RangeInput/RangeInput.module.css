@@ -1,0 +1,41 @@
+.rangePicker {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.pickerLabels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+.pickerLabels label {
+  justify-self: center;
+}
+
+.pickerLabels label.checked {
+  color: greenyellow;
+}
+
+.picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.picker button {
+  justify-self: center;
+  width: 0.5rem;
+  height: 0.75rem;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+}
+
+.picker button:hover {
+  cursor: pointer;
+}
+
+.picker button.checked {
+  background-color: greenyellow;
+}

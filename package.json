@@ -1,0 +1,38 @@
+{
+  "name": "reactoform",
+  "version": "0.1.0",
+  "description": "A library that streamlines the creation and management of forms in ReactJS",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LorenzoElenkov/Reactoform.git"
+  },
+  "author": "LorenzoElenkov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LorenzoElenkov/Reactoform/issues"
+  },
+  "homepage": "https://github.com/LorenzoElenkov/Reactoform#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/react": "^18.0.27",
+    "react": "^18.2.0",
+    "rollup": "^3.12.0",
+    "rollup-plugin-dts": "^5.1.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "tslib": "^2.5.0"
+  }
+}
