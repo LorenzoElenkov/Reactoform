@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import { ValidationFactoryProps } from '../ValidationFactory/validationFactory';
+import { ValidationFactoryProps } from '../ValidationFactory/validationFactory.interface';
 
 export interface InputProps {
   label: string;

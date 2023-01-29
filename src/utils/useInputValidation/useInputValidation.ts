@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { ValidationFactory, ValidationFactoryProps } from '../ValidationFactory/validationFactory';
+import { ValidationFactory } from '../ValidationFactory/validationFactory';
+import { ValidationFactoryProps } from '../ValidationFactory/validationFactory.interface';
 import { InputValidationProps } from './useInputValidation.interface';
 
 const useInputValidation = <T extends ValidationFactoryProps>({

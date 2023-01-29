@@ -1,6 +1,4 @@
-export interface ValidationFactoryProps {
-  new (value: string): { checkValidation: () => boolean; getValidationError: () => string };
-}
+import { ValidationFactoryProps } from "./validationFactory.interface";
 
 export class ValidationFactory<T extends ValidationFactoryProps> {
   value;
