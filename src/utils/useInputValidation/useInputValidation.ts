@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { IValidate, validate } from '../validate/validate';
+import validate, { IValidate } from '../validate/validate';
 import { InputValidationProps } from './useInputValidation.interface';
 
 const useInputValidation = ({

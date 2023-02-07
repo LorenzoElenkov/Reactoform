@@ -11,7 +11,9 @@ const SelectInput: FunctionComponent<SelectInputProps> = ({
   const [chosenOption, setChosenOption] = useState<string>('');
 
   const handleOptionChoice = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setChosenOption(e.target.value);
+    if ('value' in e.target) {
+      setChosenOption(e.target.value as string);
+    }
     onChange(e, index ?? -1);
   };
 

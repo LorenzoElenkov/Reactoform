@@ -21,7 +21,7 @@ const Input: FunctionComponent<InputProps> = ({
   customClass,
   resizable
 }) => {
-  const [isValid, inputError] = useInputValidation({ validator: validation, value: value ?? '' });
+  const [isValid, inputError] = useInputValidation({ validators: validation, inputValue: value ?? '' });
   useEffect(() => {
     onValidation(isValid, index ?? -1);
   }, [isValid, onValidation, index]);

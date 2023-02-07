@@ -6,7 +6,7 @@ const RatingInput: FunctionComponent<RatingInputProps> = ({ index, onChange, isV
   const [rating, setRating] = useState<number>(0);
 
   const handleRatingClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, index: number) => {
-    if (e.target instanceof HTMLButtonElement) {
+    if ('value' in e.target) {
       // const elementId = e.target.id;
       // setRating(Number(elementId.substring(elementId.length - 1)));
       // onChange(e, index ?? -1);

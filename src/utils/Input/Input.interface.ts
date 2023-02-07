@@ -1,10 +1,9 @@
 import React, { ChangeEvent } from 'react';
-import { ValidationFactoryProps } from '../ValidationFactory/validationFactory.interface';
 
 export interface InputProps {
   label: string;
   type: string;
-  validation: ValidationFactoryProps;
+  validation: Record<string, Record<'value' | 'error', string | number | RegExp>>;
   id: string;
   fullWidth?: boolean;
   index?: number;
