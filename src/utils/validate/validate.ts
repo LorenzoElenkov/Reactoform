@@ -1,4 +1,4 @@
-export const validate = (toTest: string): IValidate => {
+const validate = (toTest: string): IValidate => {
   const required = () => {
     return toTest ? true : false;
   };
@@ -36,3 +36,5 @@ export interface IValidate {
   minLength: (value: string) => boolean;
   maxLength: (value: string) => boolean;
 }
+
+export default validate;
