@@ -3,4 +3,5 @@ export interface TextareaInputProps {
   id: string;
   value?: string;
   index?: number;
+  resizable: boolean;
 }

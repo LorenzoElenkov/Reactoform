@@ -1,23 +1,30 @@
 import { useCallback, useEffect, useState } from 'react';
-import { ValidationFactory } from '../ValidationFactory/validationFactory';
-import { ValidationFactoryProps } from '../ValidationFactory/validationFactory.interface';
+import { IValidate, validate } from '../validate/validate';
 import { InputValidationProps } from './useInputValidation.interface';
 
-const useInputValidation = <T extends ValidationFactoryProps>({
-  validator,
-  value
-}: InputValidationProps<T>): [boolean, string] => {
+const useInputValidation = ({
+  validators,
+  inputValue
+}: InputValidationProps): [boolean, string] => {
   const [valid, setValid] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
 
   const checkValidation = useCallback(() => {
-    const input = new ValidationFactory<T>(value, validator);
-    const isValid = input.isValid();
-    setValid(isValid);
-    if (value) {
-      setError(input.getValidationError());
+    let isValid = true;
+    if (validators) {
+      const validation = validate(inputValue);
+      for (const [key, { value, error }] of Object.entries(validators)) {
+        isValid = validation[key as keyof IValidate](value as string);
+        if (!isValid && inputValue) {
+          setError(error as string);
+          break;
+        } else {
+          setError('');
+        }
+      }
     }
-  }, [validator, value]);
+    setValid(isValid);
+  }, [validators, inputValue]);
 
   useEffect(() => {
     checkValidation();

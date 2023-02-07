@@ -17,6 +17,9 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
+    "lib": [
+      "ES2017"
+    ]
   },
   "exclude": ["./package.json"]
 }

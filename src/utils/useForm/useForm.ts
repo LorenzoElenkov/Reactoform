@@ -6,7 +6,7 @@ const useForm = <T = Record<string, string>>(
   onSubmit: (value: T) => void
 ) => {
   const [formData, setFormData] = useState<Pick<InputProps, 'value' | 'id'>[]>(() => {
-    return initialState.map(({ id, value }) => ({ id, value: value || '' }));
+    return initialState.map(({ id, value, label }) => ({ id: id ?? label.replace(/ /g, ""), value: value || '' }));
   });
 
   const handleInputChange = (
@@ -17,7 +17,7 @@ const useForm = <T = Record<string, string>>(
   ) => {
     const changedFormData = [...formData];
     if ('value' in e.target) {
-      changedFormData[index].value = e.target.value;
+      changedFormData[index].value = e.target.value as string;
     }
     setFormData(changedFormData);
   };

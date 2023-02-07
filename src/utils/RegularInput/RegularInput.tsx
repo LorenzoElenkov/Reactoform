@@ -8,7 +8,15 @@ const RegularInput: FunctionComponent<RegularInputProps> = ({
   value,
   index
 }) => {
-  return <input type={type} onChange={e => onChange(e, index ?? -1)} id={id} value={value} />;
+  return (
+    <input
+      className="reactoform_regular_input"
+      type={type}
+      onChange={e => onChange(e, index ?? -1)}
+      id={id}
+      value={value}
+    />
+  );
 };
 
 export default RegularInput;

@@ -17,7 +17,9 @@ const Input: FunctionComponent<InputProps> = ({
   onChange,
   onValidation,
   index,
-  options
+  options,
+  customClass,
+  resizable
 }) => {
   const [isValid, inputError] = useInputValidation({ validator: validation, value: value ?? '' });
   useEffect(() => {
@@ -27,7 +29,15 @@ const Input: FunctionComponent<InputProps> = ({
   const renderInput = (type: string): React.ReactNode => {
     switch (type) {
       case 'textarea':
-        return <TextareaInput index={index} id={id} value={value} onChange={onChange} />;
+        return (
+          <TextareaInput
+            resizable={resizable}
+            index={index}
+            id={id}
+            value={value}
+            onChange={onChange}
+          />
+        );
       case 'rating':
         return <RatingInput index={index} onChange={onChange} isValid={isValid} />;
       case 'dropdown':
@@ -48,10 +58,12 @@ const Input: FunctionComponent<InputProps> = ({
   };
 
   return (
-    <div className={``}>
-      <label htmlFor={id}>{label}</label>
+    <div className={customClass}>
+      <label htmlFor={id} className="reactoform_label">
+        {label}
+      </label>
       {renderInput(type)}
-      {inputError && <span>{inputError}</span>}
+      {inputError && <span className="reactoform_error">{inputError}</span>}
     </div>
   );
 };

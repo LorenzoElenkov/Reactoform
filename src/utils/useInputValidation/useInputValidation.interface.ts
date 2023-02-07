@@ -1,6 +1,5 @@
-import { ValidationFactoryProps } from "../ValidationFactory/validationFactory.interface";
 
-export interface InputValidationProps<T extends ValidationFactoryProps> {
-  validator: T;
-  value: string;
+export interface InputValidationProps {
+  validators: Record<string, Record<'value' | 'error', string | number | RegExp>>;
+  inputValue: string;
 }

@@ -22,7 +22,7 @@ const SelectInput: FunctionComponent<SelectInputProps> = ({
   }, [isValid]);
 
   return (
-    <select onChange={handleOptionChoice} id={id} value={chosenOption}>
+    <select onChange={handleOptionChoice} id={id} value={chosenOption} className="reactoform_dropdown_input__container">
       <option></option>
       {options?.map((option: string, index: number) => {
         return <option key={index}>{option}</option>;

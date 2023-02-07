@@ -17,4 +17,6 @@ export interface InputProps {
   onValidation: (isValid: boolean, index: number) => void;
   value?: string;
   options?: string[];
+  customClass: string;
+  resizable: boolean;
 }

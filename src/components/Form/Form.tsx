@@ -4,7 +4,7 @@ import { InputProps } from '../../utils/Input/Input.interface';
 import useForm from '../../utils/useForm/useForm';
 import { FormProps } from './Form.interface';
 
-const Form = <T,>({ data, multiColumn, onSubmit }: FormProps<T>) => {
+const Form = <T,>({ data, onSubmit }: FormProps<T>) => {
   const [canSubmit, setCanSubmit] = useState<boolean>(false);
   const [areInputsValid, setAreInputsValid] = useState<boolean[]>(() => {
     return data.map(() => false);
@@ -24,27 +24,34 @@ const Form = <T,>({ data, multiColumn, onSubmit }: FormProps<T>) => {
     setCanSubmit(areInputsValid.every((el: boolean) => el));
   }, [areInputsValid]);
   return (
-    <form
-      onSubmit={handleSubmit}
-      className={''}
-    >
+    <form onSubmit={handleSubmit}>
       {data.map(
         (
-          { id, label, validation, type, options }: Omit<InputProps, 'onChange' | 'onValidation'>,
-          index: number
+          {
+            id,
+            label,
+            validation,
+            type,
+            options,
+            customClass,
+            resizable
+          }: Omit<InputProps, 'onChange' | 'onValidation'>,
+          index
         ) => {
           return (
             <Input
-              id={id}
-              key={index}
-              index={index}
-              label={label}
-              value={formData[index].value}
-              type={type}
-              validation={validation}
-              onChange={handleInputChange}
-              onValidation={handleOnValidation}
-              options={options}
+            id={id}
+            key={index}
+            index={index}
+            label={label}
+            value={formData[index].value}
+            type={type}
+            validation={validation}
+            onChange={handleInputChange}
+            onValidation={handleOnValidation}
+            options={options}
+            customClass={customClass}
+            resizable={resizable}
             ></Input>
           );
         }

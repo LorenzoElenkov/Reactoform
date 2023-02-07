@@ -22,23 +22,21 @@ const RangeInput: FunctionComponent<RangeInputProps> = ({ options, index, onChan
   }, [isValid]);
 
   return (
-    <div className={styles.rangePicker}>
-      <div className={styles.pickerLabels}>
+    <div className={`${styles.rangePicker} reactoform_range_input__container`}>
+      <div className={`${styles.pickerLabels} reactoform_range_input__label_container`}>
         {options?.map((option: string, indexKey: number) => {
           return (
             <label
               htmlFor={`label_${indexKey}`}
               key={indexKey}
-              className={`${
-                chosenOption === indexKey ? `${styles.checked}` : ''
-              }`}
+              className={`${chosenOption === indexKey ? `${styles.checked}` : ''}`}
             >
               {option}
             </label>
           );
         })}
       </div>
-      <div className={styles.picker}>
+      <div className={`${styles.picker} reactoform_range_input__picker_container`}>
         {options?.map((_, indexKey: number) => {
           return (
             <button
@@ -46,9 +44,7 @@ const RangeInput: FunctionComponent<RangeInputProps> = ({ options, index, onChan
               type="button"
               key={indexKey}
               id={`label_${indexKey}`}
-              className={`${
-                chosenOption === indexKey ? `${styles.checked}` : ''
-              }`}
+              className={`${chosenOption === indexKey ? `${styles.checked}` : ''}`}
               onClick={e => handleRangeClick(e, indexKey, index ?? -1)}
             />
           );
