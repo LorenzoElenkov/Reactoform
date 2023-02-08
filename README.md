@@ -2,9 +2,13 @@
 API |Examples|
 |--|--|
 
+
+
 ### Installation
 
     npm install @lorenzoelenkov/reactoform
+
+
 
 ### Quickstart
 
@@ -23,7 +27,7 @@ API |Examples|
 		    label: 'Password',
 		    type: 'password',
 		    validation: {
-			    pattern: { value: /[A-Za-z0-9\!\@\#]/, error: 'Password must contain one lowercase, one uppercase, one number and one special character' },
+			    pattern: { value: /[A-Z]+[a-z]+[0-9]+[!@#]+/, error: 'Password must contain one lowercase, one uppercase, one number and one special character' },
 			    minLength: { value: 8, error: 'Password must be at least 8 characters' }
 		    }
 	    }
