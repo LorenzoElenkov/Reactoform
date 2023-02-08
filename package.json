@@ -1,6 +1,6 @@
 {
   "name": "@lorenzoelenkov/reactoform",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A library that streamlines the creation and management of forms in ReactJS",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,6 +15,9 @@
     "type": "git",
     "url": "git+https://github.com/LorenzoElenkov/Reactoform.git"
   },
+  "keywords": [
+    "react", "react-form", "form", "forms", "react-hook-form"
+  ],
   "author": "LorenzoElenkov",
   "license": "MIT",
   "bugs": {
