@@ -1,7 +1,15 @@
-# Reactoform v0.1
+# Reactoform v0.2
 API |Examples|
 |--|--|
 
+
+### Introduction
+
+**Reactoform** library deals with form creation and validation, while changing inputs, contrary to other approaches, when hitting 'Submit' button. Therefore, 'Submit' button stays disabled until all inputs were validated correctly.
+
+**Reactoform** also does not expose inputs as other libraries do. Instead, it requires an array of objects, where each object is representing one single input with its options configured.
+
+**Reactoform** library was made by Lorenzo Elenkov as that is his own solution to form creation.
 
 
 ### Installation
